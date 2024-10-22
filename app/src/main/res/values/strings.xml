@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Booked And Busy</string>
+    <string name="one_minute">1 minute</string>
+    <string name="thirty_mins">30 minutes</string>
+    <string name="one_hr">1 hour</string>
+    <string name="one_day">1 day</string>
+    <string name="one_week">1 week</string>
+    <string name="remind_me_to_read">Remind me to read %1$s</string>
+    <string name="the_kingmaker">The Kingmaker</string>
+    <string name="kennedy_ryan">Kennedy Ryan</string>
+    <string name="before_i_let_go">Before I Let Go</string>
+    <string name="seven_days_in_june">Seven Days in June</string>
+    <string name="tia_williams">Tia Williams</string>
+    <string name="you_made_a_fool">You Made a Fool of Death with Your Beauty</string>
+    <string name="queen_move">Queen Move</string>
+    <string name="akwaeke_emezi">Akwaeke Emezi</string>
+    <string name="talia_hibbert">Talia Hibbert</string>
+    <string name="the_neighbor_favor">The Neighbor Favor</string>
+    <string name="kristina_forest">Kristina Forest</string>
+    <string name="only_for_the_week">Only for the Week</string>
+    <string name="natasha_bishop">Natasha Bishop</string>
+    <string name="curvy_girl_summer">Curvy Girl Summer</string>
+    <string name="danielle_allen">Danielle Allen</string>
+    <string name="a_worthy_love">A Worthy Love</string>
+    <string name="a_e_valdez">A.E. Valdez</string>
+    <string name="rhythm_s_blues">Rhythm\'s Blues</string>
+    <string name="kimberly_brown">Kimberly Brown</string>
+    <string name="read">Read</string>
 </resources>

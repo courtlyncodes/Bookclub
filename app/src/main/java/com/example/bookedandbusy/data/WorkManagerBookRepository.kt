@@ -9,7 +9,7 @@ import com.example.bookedandbusy.model.Book
 import com.example.bookedandbusy.workers.ReadReminderWorker
 import java.util.concurrent.TimeUnit
 
-class WorkManagerBookRepository(context: Context): BookRepository {
+class WorkManagerBookRepository(context: Context) : BookRepository {
 
     private val workManager = WorkManager.getInstance(context)
 
@@ -21,10 +21,11 @@ class WorkManagerBookRepository(context: Context): BookRepository {
             TimeUnit.SECONDS -> duration * 1000L
             TimeUnit.MINUTES -> duration * 60 * 1000L
             TimeUnit.HOURS -> duration * 60 * 60 * 1000L
+            TimeUnit.DAYS -> duration * 24 * 60 * 60 * 1000L
             else -> throw IllegalArgumentException("Unsupported time unit: $unit")
         }
         val data = Data.Builder()
-            data.putString(ReadReminderWorker.nameKey, bookName)
+        data.putString(ReadReminderWorker.nameKey, bookName)
 
         val workRequest = OneTimeWorkRequestBuilder<ReadReminderWorker>()
             .setInitialDelay(durationInMillis, unit)

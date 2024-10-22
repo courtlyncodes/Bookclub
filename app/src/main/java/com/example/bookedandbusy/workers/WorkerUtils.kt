@@ -62,5 +62,4 @@ fun makeStatusNotification(message: String, context: Context) {
     } else {
         NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, builder.build())
     }
-
 }

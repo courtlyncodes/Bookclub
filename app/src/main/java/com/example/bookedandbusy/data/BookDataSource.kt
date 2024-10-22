@@ -1,48 +1,49 @@
 package com.example.bookedandbusy.data
 
 import com.example.bookedandbusy.model.Book
+import com.example.myapplication.R
 
 object BookDataSource {
     val books = listOf(
         Book(
-            title = "The Kingmaker",
-            author = "Kennedy Ryan"
+            title = R.string.the_kingmaker,
+            author = R.string.kennedy_ryan
         ),
         Book(
-            title = "Before I Let Go",
-            author = "Kennedy Ryan"
+            title = R.string.before_i_let_go,
+            author = R.string.kennedy_ryan
         ),
         Book(
-            title = "Seven Days in June",
-            author = "Tia Williams"
+            title = R.string.seven_days_in_june,
+            author = R.string.tia_williams
         ),
         Book(
-            title = "You Made a Fool of Death with Your Beauty",
-            author = "Akwaeke Emezi"
+            title = R.string.you_made_a_fool,
+            author = R.string.akwaeke_emezi
         ),
         Book(
-            title = "Queen Move",
-            author = "Kennedy Ryan"
+            title = R.string.queen_move,
+            author = R.string.kennedy_ryan
         ),
         Book(
-            title = "Happily Ever Afters",
-            author = "Elise Bryant"
+            title = R.string.rhythm_s_blues,
+            author = R.string.kimberly_brown
         ),
         Book(
-            title = "How to Catch a Queen",
-            author = "Alyssa Cole"
+            title = R.string.a_worthy_love,
+            author = R.string.a_e_valdez
         ),
         Book(
-            title = "The Boyfriend Project",
-            author = "Farrah Rochon"
+            title = R.string.curvy_girl_summer,
+            author = R.string.danielle_allen
         ),
         Book(
-            title = "The Proposal",
-            author = "Jasmine Guillory"
+            title = R.string.only_for_the_week,
+            author = R.string.natasha_bishop
         ),
         Book(
-            title = "Get a Life, Chloe Brown",
-            author = "Talia Hibbert"
+            title = R.string.the_neighbor_favor,
+            author = R.string.kristina_forest
         )
     )
 }

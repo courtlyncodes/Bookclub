@@ -1,10 +1,11 @@
 package com.example.bookedandbusy.model
 
 import android.os.Parcelable
+import androidx.annotation.StringRes
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Book (
-    val title: String,
-    val author: String
+    @StringRes val title: Int,
+    @StringRes val author: Int
 ): Parcelable
