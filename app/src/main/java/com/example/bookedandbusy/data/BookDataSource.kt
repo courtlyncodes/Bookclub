@@ -1,7 +1,7 @@
 package com.example.bookedandbusy.data
 
 import com.example.bookedandbusy.model.Book
-import com.example.myapplication.R
+import com.example.bookedandbusy.R
 
 object BookDataSource {
     val books = listOf(

@@ -17,21 +17,15 @@ class WorkManagerBookRepository(context: Context) : BookRepository {
         get() = BookDataSource.books
 
     override fun scheduleReadReminder(duration: Long, unit: TimeUnit, bookName: String) {
-        val durationInMillis = when (unit) {
-            TimeUnit.SECONDS -> duration * 1000L
-            TimeUnit.MINUTES -> duration * 60 * 1000L
-            TimeUnit.HOURS -> duration * 60 * 60 * 1000L
-            TimeUnit.DAYS -> duration * 24 * 60 * 60 * 1000L
-            else -> throw IllegalArgumentException("Unsupported time unit: $unit")
-        }
+
         val data = Data.Builder()
         data.putString(ReadReminderWorker.nameKey, bookName)
 
-        val workRequest = OneTimeWorkRequestBuilder<ReadReminderWorker>()
-            .setInitialDelay(durationInMillis, unit)
+        val workRequestBuilder = OneTimeWorkRequestBuilder<ReadReminderWorker>()
+            .setInitialDelay(duration, unit)
             .setInputData(data.build())
             .build()
 
-        workManager.enqueueUniqueWork(bookName + duration, ExistingWorkPolicy.REPLACE, workRequest)
+        workManager.enqueueUniqueWork(bookName + duration, ExistingWorkPolicy.REPLACE, workRequestBuilder)
     }
 }

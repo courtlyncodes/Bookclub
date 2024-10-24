@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myapplication"
+    namespace = "com.example.bookedandbusy"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.myapplication"
+        applicationId = "com.example.bookedandbusy"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -60,12 +60,29 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     // WorkManager
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.play.services.basement)
+    implementation(libs.core.ktx)
 
     testImplementation(libs.junit)
+
+    // Espresso
+    androidTestImplementation(libs.androidx.espresso.core.v340)
+
+    // Work testing
+    androidTestImplementation(libs.androidx.work.testing)
+
+    // Mockito
+//    testImplementation(libs.androidx.mockitokotlin2)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.kotlin)
+
+    testImplementation(libs.androidx.work.testing.v281)
+
+    // Junit
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))

@@ -26,4 +26,6 @@
     <string name="rhythm_s_blues">Rhythm\'s Blues</string>
     <string name="kimberly_brown">Kimberly Brown</string>
     <string name="read">Read</string>
+    <string name="it_s_time_to_read">It\'s time to read %1$s</string>
+    <string name="five_seconds">5 seconds</string>
 </resources>

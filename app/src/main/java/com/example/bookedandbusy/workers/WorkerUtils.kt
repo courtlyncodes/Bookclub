@@ -21,7 +21,7 @@ import java.io.IOException
 import java.util.UUID
 import com.example.bookedandbusy.VERBOSE_NOTIFICATION_CHANNEL_DESCRIPTION
 import com.example.bookedandbusy.VERBOSE_NOTIFICATION_CHANNEL_NAME
-import com.example.myapplication.R
+import com.example.bookedandbusy.R
 
 private const val TAG = "WorkerUtils"
 
