@@ -19,6 +19,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -75,6 +76,7 @@ fun BookedAndBusyApp(bookViewModel: BookViewModel = viewModel(factory = BookView
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BookListContent(
     books: List<Book>,
@@ -84,30 +86,36 @@ fun BookListContent(
     var selectedBook by rememberSaveable { mutableStateOf(books[0]) }
     var showReminderDialog by rememberSaveable { mutableStateOf(false) }
     var selectedTime by rememberSaveable { mutableLongStateOf(5000L) }
-
-    LazyColumn(
-        contentPadding = PaddingValues(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
-        modifier = modifier
-    ) {
-        items(books) {
-            BookListItem(
-                book = it,
-                onItemSelect = { book ->
-                    selectedBook = book
-                    showReminderDialog = true
-                },
-                modifier = Modifier.fillMaxWidth()
+    Scaffold(
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = { Text(text = stringResource(R.string.app_name)) }
+            )
+        }) { it ->
+        LazyColumn(
+            contentPadding = PaddingValues(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+            modifier = modifier.padding(it)
+        ) {
+            items(books) {
+                BookListItem(
+                    book = it,
+                    onItemSelect = { book ->
+                        selectedBook = book
+                        showReminderDialog = true
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+        }
+        if (showReminderDialog) {
+            ReminderDialogContent(
+                onTimeSelected = { selectedTime = it },
+                onDialogDismiss = { showReminderDialog = false },
+                bookName = stringResource(selectedBook.title),
+                onScheduleReminder = onScheduleReminder
             )
         }
-    }
-    if (showReminderDialog) {
-        ReminderDialogContent(
-            onTimeSelected = { selectedTime = it },
-            onDialogDismiss = { showReminderDialog = false },
-            bookName = stringResource(selectedBook.title),
-            onScheduleReminder = onScheduleReminder
-        )
     }
 }
 
